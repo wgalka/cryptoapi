@@ -1,0 +1,12 @@
+<mat-card>
+  <h1>example: Hello World!</h1>
+  <mat-form-field appearance="fill">
+    <mat-label>Provide your name</mat-label>
+    <input matInput id="imie" type="text" #name>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary" (click)="sayHello(name.value)">Say Hello</button>
+  <br>
+  <br>
+  <p>{{messageforuser}}</p>
+</mat-card>

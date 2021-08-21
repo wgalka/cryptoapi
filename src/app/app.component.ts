@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Coin} from "./services/client.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cryptoapi';
+  loadCoinsTableFlag: boolean;
+  xs: Coin;
+
+  loadCoinsTable() {
+    this.loadCoinsTableFlag = !this.loadCoinsTableFlag;
+    this.xs = {id: "d", name: "r32", symbol: "321"};
+  }
 }
