@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ClientService, Coin} from "../../services/client.service";
+// import { saveAs } from 'filesaver'
 
 @Component({
   selector: 'app-coinstable',
@@ -15,7 +16,7 @@ export class CoinstableComponent implements OnInit {
   ngOnInit(): void {
     this.clientService.getCurrency().subscribe(data => {
       this.coins = data;
+      // window.navigator.msSaveOrOpenBlob("xd");
     })
   }
-
 }

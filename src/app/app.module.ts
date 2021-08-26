@@ -18,6 +18,8 @@ import {MatCardModule} from "@angular/material/card";
 import {NavBarComponent} from './components/nav-bar/nav-bar.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { BuycryptoComponent } from './components/buycrypto/buycrypto.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FindandreplaceComponent } from './components/findandreplace/findandreplace.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { BuycryptoComponent } from './components/buycrypto/buycrypto.component';
     CoinstableComponent,
     Exchangecrypto,
     NavBarComponent,
-    BuycryptoComponent
+    BuycryptoComponent,
+    FooterComponent,
+    FindandreplaceComponent
   ],
   imports: [
     BrowserModule,

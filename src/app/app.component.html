@@ -4,14 +4,18 @@
 </head>
 <body>
 <app-nav-bar></app-nav-bar>
+
 <div class="container">
   <app-api></app-api>
 
   <app-currencyform></app-currencyform>
-  <app-buycrypto></app-buycrypto>
+<!--  <app-buycrypto></app-buycrypto>-->
+
+  <app-findandreplace></app-findandreplace>
   <button (click)="loadCoinsTable();" mat-raised-button color="primary">Load all coins table</button>
   <app-coinstable *ngIf="loadCoinsTableFlag"></app-coinstable>
 </div>
+<app-footer></app-footer>
 </body>
 </html>
 
