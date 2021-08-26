@@ -20,6 +20,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import { BuycryptoComponent } from './components/buycrypto/buycrypto.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FindandreplaceComponent } from './components/findandreplace/findandreplace.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { FindandreplaceComponent } from './components/findandreplace/findandrepl
     MatInputModule,
     MatCardModule,
     FormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
