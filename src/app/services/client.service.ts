@@ -17,6 +17,10 @@ export class ClientService {
   public getPrice(cryptocurrency: string): Observable<Prices> {
     return this.httpClient.get<Prices>("https://min-api.cryptocompare.com/data/price?fsym=" + cryptocurrency + "&tsyms=USD,JPY,PLN,EUR,GBP,CHF")
   }
+
+  public getChartData(cryptocurrency: string, currency: string): Observable<any> {
+    return this.httpClient.get("https://api.coingecko.com/api/v3/coins/" + cryptocurrency + "/ohlc?vs_currency=" + currency + "&days=1")
+  }
 }
 
 export interface Coin {
@@ -32,4 +36,12 @@ export interface Prices {
   EUR: number;
   GBP: number;
   CHF: number;
+}
+
+export interface ChartData {
+  timestamp: number;
+  open: number;
+  high: number;
+  low: number;
+  close: number;
 }

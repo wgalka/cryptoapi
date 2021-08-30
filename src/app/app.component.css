@@ -16,3 +16,16 @@ button {
     width: 95%;
   }
 }
+
+mat-sidenav {
+  width: 200px;
+}
+
+mat-sidenav-container{
+  min-height: calc(100% - 8rem);
+}
+
+.container{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

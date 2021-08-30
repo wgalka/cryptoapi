@@ -15,13 +15,17 @@ import {Exchangecrypto} from './components/exchangecrypto/exchangecrypto';
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
-import {NavBarComponent} from './components/nav-bar/nav-bar.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
-import { BuycryptoComponent } from './components/buycrypto/buycrypto.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { FindandreplaceComponent } from './components/findandreplace/findandreplace.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {FindandreplaceComponent} from './components/findandreplace/findandreplace.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {BoardComponent} from "./components/board/board.component";
+import {DragDropModule} from "@angular/cdk/drag-drop";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
+import {RouterModule} from "@angular/router";
+import {GoogleChartsModule} from "angular-google-charts";
 
 @NgModule({
   declarations: [
@@ -29,28 +33,38 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
     HelloworldComponent,
     CoinstableComponent,
     Exchangecrypto,
-    NavBarComponent,
-    BuycryptoComponent,
     FooterComponent,
-    FindandreplaceComponent
+    FindandreplaceComponent,
+    BoardComponent,
+    BoardComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatSelectModule,
-    ReactiveFormsModule,
-    MatTableModule,
-    MatButtonModule,
-    MatStepperModule,
-    MatInputModule,
-    MatCardModule,
-    FormsModule,
-    MatToolbarModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatSelectModule,
+        ReactiveFormsModule,
+        MatTableModule,
+        MatButtonModule,
+        MatStepperModule,
+        MatInputModule,
+        MatCardModule,
+        FormsModule,
+        MatToolbarModule,
+        MatProgressSpinnerModule,
+        MatProgressBarModule,
+        DragDropModule,
+        MatSidenavModule,
+        MatListModule,
+        RouterModule.forRoot([
+            {path: 'helloworld', component: HelloworldComponent},
+            {path: 'exchange', component: Exchangecrypto},
+            {path: 'findandreplace', component: FindandreplaceComponent},
+            {path: 'board', component: BoardComponent},
+        ]),
+        GoogleChartsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

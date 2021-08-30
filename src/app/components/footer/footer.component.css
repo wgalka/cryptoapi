@@ -1,0 +1,15 @@
+i{
+  font-size: 2rem;
+  color: aliceblue;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+i:hover{
+  color: indigo;
+}
+
+.text-center{
+  text-align: center;
+  align-content: center;
+  margin: auto;
+}

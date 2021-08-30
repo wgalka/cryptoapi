@@ -1,0 +1,22 @@
+<mat-card class="example-form">
+  <h1>Find and replace word in text using KMP Algorithm</h1>
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Input text here.</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..." rows="10" [(ngModel)]="str"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Replace</mat-label>
+    <input matInput placeholder="Ex. Pizza" value="ipsum" #wordToReplace>
+  </mat-form-field>
+
+  <mat-form-field class="nth-field" appearance="fill">
+    <mat-label>With</mat-label>
+    <input matInput placeholder="Ex. Pizza" value="dipsum" #wordReplaceWith>
+  </mat-form-field>
+
+  <button mat-raised-button (click)="replaceWith(wordToReplace.value, wordReplaceWith.value)" color="primary">Replace
+  </button>
+  <h2>Result:</h2>
+  <p [innerHTML]="replacedText"></p>
+</mat-card>

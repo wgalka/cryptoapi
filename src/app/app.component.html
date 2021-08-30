@@ -3,18 +3,37 @@
   <title>WG</title>
 </head>
 <body>
-<app-nav-bar></app-nav-bar>
+<mat-toolbar>
+  <button mat-icon-button (click)="snav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div>My Application</div>
+</mat-toolbar>
 
-<div class="container">
-  <app-api></app-api>
+<mat-sidenav-container>
+  <mat-sidenav #snav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/helloworld">Hello World!</a>
+      <a mat-list-item routerLink="/exchange">Cryptocurrency to currency</a>
+      <a mat-list-item routerLink="/findandreplace">Find and replace</a>
+      <a mat-list-item routerLink="/board">Drag and drop lists</a>
+    </mat-nav-list>
 
-  <app-currencyform></app-currencyform>
-<!--  <app-buycrypto></app-buycrypto>-->
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="container">
+      <router-outlet></router-outlet>
+      <!--      <app-board></app-board>-->
+      <!--      <app-api></app-api>-->
+      <!--      <app-currencyform></app-currencyform>-->
+      <!--      &lt;!&ndash;  <app-buycrypto></app-buycrypto>&ndash;&gt;-->
+      <!--      <app-findandreplace></app-findandreplace>-->
+      <!--      <button (click)="loadCoinsTable();" mat-raised-button color="primary">Load all coins table</button>-->
+      <!--      <app-coinstable *ngIf="loadCoinsTableFlag"></app-coinstable>-->
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
-  <app-findandreplace></app-findandreplace>
-  <button (click)="loadCoinsTable();" mat-raised-button color="primary">Load all coins table</button>
-  <app-coinstable *ngIf="loadCoinsTableFlag"></app-coinstable>
-</div>
 <app-footer></app-footer>
 </body>
 </html>

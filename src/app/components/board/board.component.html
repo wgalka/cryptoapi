@@ -1,0 +1,67 @@
+<div class="board-conatainer">
+  <div class="list"
+       cdkDropList
+       #player_list='cdkDropList'
+       [cdkDropListData]='player_char'
+       [cdkDropListConnectedTo]='[polishing_list,prototyping_list,production_list]'
+       (cdkDropListDropped)='onDrop($event)'
+  >
+    <h2>Player card</h2>
+    <mat-card *ngFor="let gameplay_elem of player_char" cdkDrag>
+      <mat-card-header>
+        <mat-card-title>{{gameplay_elem.name}}</mat-card-title>
+        <mat-card-subtitle>{{gameplay_elem.description}}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+
+  <div class="list"
+       cdkDropList
+       #prototyping_list="cdkDropList"
+       [cdkDropListData]='prototyping'
+       [cdkDropListConnectedTo]='[polishing_list,player_list,production_list]'
+       (cdkDropListDropped)='onDrop($event)'
+  >
+    <h2>Prototyping</h2>
+    <mat-card *ngFor="let prototyping_elem of prototyping" cdkDrag>
+      <mat-card-header>
+        <mat-card-title>{{prototyping_elem.name}}</mat-card-title>
+        <mat-card-subtitle>{{prototyping_elem.description}}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+
+  <div class="list"
+       cdkDropList
+       #production_list="cdkDropList"
+       [cdkDropListData]='production'
+       [cdkDropListConnectedTo]='[polishing_list,player_list,prototyping_list]'
+       (cdkDropListDropped)='onDrop($event)'
+  >
+    <h2>Production</h2>
+    <mat-card *ngFor="let production_elem of production" cdkDrag>
+      <mat-card-header>
+        <mat-card-title>{{production_elem.name}}</mat-card-title>
+        <mat-card-subtitle>{{production_elem.description}}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+
+
+  <div class="list"
+       cdkDropList
+       #polishing_list="cdkDropList"
+       [cdkDropListData]='polishing'
+       [cdkDropListConnectedTo]='[prototyping_list,player_list,production_list]'
+       (cdkDropListDropped)='onDrop($event)'
+  >
+    <h2>Polish</h2>
+    <mat-card *ngFor="let polishing_elem of polishing" cdkDrag>
+      <mat-card-header>
+        <mat-card-title>{{polishing_elem.name}}</mat-card-title>
+        <mat-card-subtitle>{{polishing_elem.description}}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+
+  </div>
+</div>

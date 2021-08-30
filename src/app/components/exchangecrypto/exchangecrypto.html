@@ -32,4 +32,15 @@
   <p>Current price for 1 {{selectedCryptoCurrency.symbol}} coin = {{currentPrice}} {{selectedCurrency.symbol}}</p>
   <p>You have {{valueofinput.value}} {{selectedCryptoCurrency.symbol}}
     worth {{userCashVale}} {{selectedCurrency.symbol}}</p>
+  <mat-progress-bar *ngIf="inProgress" mode="indeterminate"></mat-progress-bar>
+  {{errormessage}}
+  <google-chart *ngIf="displayChart"
+                [title]="chart.title"
+                [data]="chart.data"
+                [type]="chart.type"
+                [width]='1000'
+                [height]="500"
+                [options]="chart.options"
+  ></google-chart>
+  <mat-progress-bar *ngIf="inProgress2" mode="indeterminate"></mat-progress-bar>
 </mat-card>
